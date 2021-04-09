@@ -11,6 +11,7 @@ from queue import PriorityQueue
 #      If the path is ending in the goal state, print the path and exit
 #      Else
 #           Insert all the children of the dequeued element, with the cumulative costs as priority
+# And the lessons of Prof. Alper Bilge and Prof. Sadi Evren Seker were used.
 
 class CityNotFoundError(Exception):
     def __init__(self, city):
@@ -66,15 +67,9 @@ def uniform_cost_search(graph, start, end):
 
 
         if (city == end):
-            #print("yess")
-            #print(visited_nodes)
             return
         else:
-            #print("Else girdi")
-            #print(city)
-            # print(graph[city])
             for next in graph[city]:
-                # print(next)
                 if (next == end):
                     visited_nodes.append(next)
                     #print(visited_nodes)
